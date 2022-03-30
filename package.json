@@ -1,8 +1,8 @@
 {
-  "name": "iotex-antenna",
-  "version": "0.30.10",
+  "name": "iotex-antenna-lite",
+  "version": "0.2.0",
   "description": "IoTeX blockchain SDK",
-  "iotexCoreVersion": "iotex-core v0.7.1",
+  "iotexCoreVersion": "iotex-core v0.2.0",
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -60,15 +60,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/iotexproject/iotex-antenna.git"
+    "url": "git+ssh://git@github.com/guoshijiang/iotex-antenna.git"
   },
   "keywords": [],
-  "author": "Tian Pan (tian@iotex.io)",
+  "author": "guoshijiang",
   "license": "APACHE",
   "bugs": {
-    "url": "https://github.com/iotexproject/iotex-antenna/issues"
+    "url": "https://github.com/guoshijiang/iotex-antenna/issues"
   },
-  "homepage": "https://github.com/iotexproject/iotex-antenna#readme",
+  "homepage": "https://github.com/guoshijiang/iotex-antenna#readme",
   "devDependencies": {
     "@babel/cli": "7.5.0",
     "@babel/core": "7.5.4",
@@ -134,7 +134,6 @@
     "isomorphic-ws": "^4.0.1",
     "protoc": "^1.0.4",
     "randombytes": "^2.1.0",
-    "scrypt.js": "0.3.0",
     "sha3": "2.0.1",
     "utf8": "^3.0.0",
     "uuid": "3.3.2",

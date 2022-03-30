@@ -2,7 +2,6 @@
 import crypto, { Cipher, Decipher } from "crypto";
 import randomBytes from "randombytes";
 // @ts-ignore
-import scryptsy from "scrypt.js";
 import uuidv4 from "uuid/v4";
 import { fromString } from "../crypto/address";
 import { privateKeyToAccount } from "../crypto/crypto";
@@ -135,19 +134,6 @@ export function encrypt(
       kdfparams.dklen,
       "sha256"
     );
-  } else if (kdf === "scrypt") {
-    // FIXME: support progress reporting callback
-    kdfparams.n = opts.n || 262144;
-    kdfparams.r = opts.r || 8;
-    kdfparams.p = opts.p || 1;
-    derivedKey = scryptsy(
-      Buffer.from(password),
-      salt,
-      kdfparams.n,
-      kdfparams.r,
-      kdfparams.p,
-      kdfparams.dklen
-    );
   } else {
     throw new Error("Unsupported kdf");
   }
@@ -190,25 +176,11 @@ export function decrypt(
 ): { address: string; publicKey: string; privateKey: string } {
   let derivedKey;
   let kdfparams;
-  if (privateKey.crypto.kdf === "scrypt") {
+  if (privateKey.crypto.kdf === "pbkdf2") {
     kdfparams = privateKey.crypto.kdfparams;
-
-    // FIXME: support progress reporting callback
-    derivedKey = scryptsy(
-      Buffer.from(password),
-      Buffer.from(kdfparams.salt, "hex"),
-      kdfparams.n,
-      kdfparams.r,
-      kdfparams.p,
-      kdfparams.dklen
-    );
-  } else if (privateKey.crypto.kdf === "pbkdf2") {
-    kdfparams = privateKey.crypto.kdfparams;
-
     if (kdfparams.prf !== "hmac-sha256") {
       throw new Error("Unsupported parameters to PBKDF2");
     }
-
     derivedKey = crypto.pbkdf2Sync(
       Buffer.from(password),
       Buffer.from(kdfparams.salt, "hex"),
