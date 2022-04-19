@@ -26,7 +26,6 @@ module.exports = {
         use: ["cache-loader", "babel-loader"],
         include: path.resolve("src")
       },
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
       {
         test: /\.js$/,

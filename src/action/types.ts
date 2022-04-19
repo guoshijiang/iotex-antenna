@@ -10,13 +10,8 @@ export interface Transfer extends BaseActionRequest {
 }
 
 export interface Execution extends BaseActionRequest {
-  // Execution contract
   contract: string;
-
-  // Execution amount
   amount: string;
-
-  // Execution data
   data: Buffer;
 }
 
@@ -69,7 +64,6 @@ export interface StakeTransferOwnership extends BaseActionRequest {
 }
 
 export interface CandidateRegister extends BaseActionRequest {
-  // CandidateBasicInfo
   name: string;
   operatorAddress: string;
   rewardAddress: string;
@@ -98,7 +92,6 @@ export enum ActionErrorCode {
 
 export class ActionError extends Error {
   public code: ActionErrorCode;
-
   constructor(code: ActionErrorCode, message: string) {
     super(message);
     this.code = code;

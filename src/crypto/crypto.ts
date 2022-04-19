@@ -6,8 +6,8 @@ import Bytes from "eth-lib/lib/bytes";
 
 import { fromBytes } from "./address";
 import { hash160b } from "./hash";
-
 const secp256k1 = new elliptic.ec("secp256k1"); // eslint-disable-line
+
 
 export function publicKeyToAddress(publicKey: string): string {
   const key = secp256k1.keyFromPublic(publicKey, "hex");

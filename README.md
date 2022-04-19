@@ -1,22 +1,16 @@
 [![CircleCI](https://circleci.com/gh/iotexproject/iotex-antenna.svg?style=svg&circle-token=9793be645e0d890924fee61fa5e3bfaff8d19942)](https://circleci.com/gh/iotexproject/iotex-antenna)
 
-# iotex-antenna
+# iotex-antenna-lite
 
-iotex-antenna is our SDK allowing you to interact with a local or remote iotex blockchain node, using a gRPC or gRPC-web connection.
+iotex-antenna-lite change from iotex-antenna
 
-- [Documentation](https://docs.iotex.io/developer/sdk/install-antenna-js.html)
-- [Reference](https://iotexproject.github.io/iotex-antenna/)
 
-## Antenna features
+## iotex antenna lite features
 
 | Features      | antenna | [antenna-java](https://github.com/iotexproject/iotex-antenna-java) | [antenna-go](https://github.com/iotexproject/iotex-antenna-go) | [antenna-swift](https://github.com/iotexproject/iotex-antenna-swift) |
 | ------------- | ------- | ------------------------------------------------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------------- |
 | crypto        | Yes     | Yes                                                                | Yes                                                            | Yes                                                                  |
-| rpc-method    | Yes     | Yes                                                                | Yes                                                            | Yes                                                                  |
-| account       | Yes     | Yes                                                                | Yes                                                            | Yes                                                                  |
 | action        | Yes     | Yes                                                                | Yes                                                            | Yes                                                                  |
-| contract      | Yes     | Yes                                                                | Yes                                                            | Yes                                                                  |
-| token support | Yes     | Yes                                                                | No                                                             | Yes                                                                  |
 
 ## Developing
 
